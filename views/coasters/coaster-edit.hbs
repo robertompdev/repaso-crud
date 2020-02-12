@@ -1,0 +1,27 @@
+<h1>Editar una montaña rusa</h1>
+
+<form action="/coasters/edit/{{_id}}" method="post">
+    <label for="">Name:</label>
+    <input type="text" name="name" value="{{ame}}"><br>
+
+    <label for="">Description:</label>
+    <input type="text" name="description" value="{{description}}"><br>
+
+    <label for="">Inversions:</label>
+    <input type="number" name="inversiosn" value="{{inversions}}"><br>
+
+    <label for="">Length:</label>
+    <input type="number" name="length" value="{{length}}"><br>
+
+    <div class="form-group">
+        <label for="park-list">Parque en el que se encuentra:</label>
+        <select name="park" class="form-control" id="park">
+            <option>Seleccionar</option>
+            {{#each parks}}
+            <option value="{{_id}}">{{name}}</option>
+            {{/each}}
+        </select>
+    </div>
+
+    <button type="submit">UPDATE</button>
+</form>
